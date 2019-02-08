@@ -45,14 +45,14 @@
         </table>
         <br>
         <table>
-            <thead>
+            <!-- <thead>
                 <tr>
                     <th>Nama</th>
                     <th>Usia</th>
                     <th>Kelamin</th>
                     <th>Pekerjaan</th>
                 </tr>
-            </thead>
+            </thead> -->
 
             <tbody id='isiTable'>
 
@@ -116,7 +116,12 @@
         }
 
         function showData(arr) {
-            var tampil = ''
+            var tampil = `<tr>
+                    <th>Nama</th>
+                    <th>Usia</th>
+                    <th>Kelamin</th>
+                    <th>Pekerjaan</th>
+                </tr>`
             for (var i = 0; i < arr.length; i++) {
                 tampil +=
                     `<tr>
@@ -131,6 +136,17 @@
 
         function sortNama() {
             function compare(a,b) {
+                //Pake Bubble Sort
+                // //for(var i = 0; i = <data.length; i++){
+                //     //for(var j = (i+1); j < data.length; j++){
+                //         //if (data[i].nama > data[j].nama){
+                //             var temp = data[i];
+                //             data[i] = data[j]
+                //             data[j] = temp
+                //         }
+                // // }
+                // //}
+                
                 // Use toUpperCase() to ignore character casing
                 const namaA = a.nama.toUpperCase();
                 const namaB = b.nama.toUpperCase();
